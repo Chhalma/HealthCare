@@ -1,0 +1,29 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+#anPaneReg{
+	-fx-background-color: linear-gradient(to bottom right,#ffffff, #77c9c6);
+}
+.textField{
+	-fx-text-fill:#000000;
+	-fx-font-size:15px;
+	-fx-focus-color:#ffffff;
+	-fx-border-color: green;
+}
+.label{
+	-fx-font-size:14px;
+	
+}
+#regintrationHeader{
+	-fx-text-fill:green;
+	-fx-font-size:30px;
+}
+#loginBtn{
+	-fx-background-color:77c9c6;
+	-fx-text-fill:#ffffff;
+	-fx-font-size:15px;
+}
+#registerBtn{
+	-fx-background-color:#coral;
+	-fx-text-fill:#ffffff;
+	-fx-font-size:15px;
+}

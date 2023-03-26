@@ -1,0 +1,102 @@
+package application;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXButton;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import dbConnection.ConnectionDB;
+
+
+public class LoginController implements Initializable{
+
+	@FXML
+    private AnchorPane anPane;
+
+    @FXML
+    private Label header;
+    
+    @FXML
+    private JFXButton forgotPassBtn;
+
+    @FXML
+    private Pane leftPane;
+
+    @FXML
+    private JFXButton loginBtn;
+
+    @FXML
+    private Label loginHeader;
+
+    @FXML
+    private Label password;
+
+    @FXML
+    private PasswordField passwordField;
+
+    @FXML
+    private JFXButton registerBtn;
+
+    @FXML
+    private Label username;
+
+    @FXML
+    private TextField usernameField;
+    
+    Connection con;
+    ConnectionDB conDB = new ConnectionDB();
+    @FXML
+    void createLogin(ActionEvent event) {
+    			try {
+					con = conDB.getConnection();
+					System.out.println(con);
+					System.out.println("Connected To Database.");
+				} catch (ClassNotFoundException | SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		
+    }
+    
+
+    
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		
+	}
+	@FXML
+    void createRegister(ActionEvent event)  {
+	    	try {
+    		registerBtn.getScene().getWindow().hide();
+        	
+    	Stage signUp = new Stage();
+    	Parent root = FXMLLoader.load(getClass().getResource("/registration/Registration.fxml"));
+		
+    	Scene scene = new Scene(root);
+    	signUp.setScene(scene);
+    	signUp.show();
+    	}catch(IOException ie ) {
+    		System.out.println(ie);
+    		 ie.printStackTrace();
+    	}
+    }
+
+}
