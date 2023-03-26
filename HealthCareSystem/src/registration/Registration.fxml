@@ -21,7 +21,7 @@
       <Label layoutX="91.0" layoutY="166.0" prefHeight="17.0" prefWidth="99.0" stylesheets="@registration.css" text="Full Name  :" />
       <Label layoutX="90.0" layoutY="220.0" prefHeight="17.0" prefWidth="99.0" stylesheets="@registration.css" text="Password   :" />
       <Label layoutX="91.0" layoutY="277.0" prefHeight="17.0" prefWidth="99.0" stylesheets="@registration.css" text="Email         :" />
-      <TextField fx:id="UserName" layoutX="188.0" layoutY="157.0" prefHeight="37.0" prefWidth="339.0" promptText="Enter your name..." styleClass="textField" stylesheets="@registration.css" />
+      <TextField fx:id="userName" layoutX="188.0" layoutY="157.0" prefHeight="37.0" prefWidth="339.0" promptText="Enter your name..." styleClass="textField" stylesheets="@registration.css" />
       <PasswordField fx:id="password" layoutX="188.0" layoutY="213.0" prefHeight="37.0" prefWidth="339.0" promptText="Enter your Password..." styleClass="textField" stylesheets="@registration.css" />
       <TextField fx:id="email" layoutX="189.0" layoutY="268.0" prefHeight="37.0" prefWidth="339.0" promptText="Enter your email..." styleClass="textField" stylesheets="@registration.css" />
       <CheckBox fx:id="checkBox" layoutX="191.0" layoutY="332.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="333.0" text="I agree with your terms and conditions." />

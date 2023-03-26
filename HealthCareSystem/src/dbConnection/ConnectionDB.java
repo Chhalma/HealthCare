@@ -19,18 +19,6 @@ public class ConnectionDB extends Configs{
 		}
 		
 		return con;
-		/*java.sql.Statement st = con.createStatement();
-		String str = "INSERT INTO `user` ( `user_name`, `password`, `role`, `active`) VALUES ( 'saifur', '1234', 'admin', '1'); ";
-		st.execute(str);
-		System.out.println("Data Inserted.");
 		
-		String str2 = "select * from user";
-		ResultSet rs = st.executeQuery(str2);
-		while(rs.next()) {
-			System.out.println("User_name: "+ rs.getString("user_name")+", Password: "+rs.getString("password"));
-		}
-		st.close();
-		con.close();
-	*/
 	}
 }
