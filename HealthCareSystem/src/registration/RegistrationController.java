@@ -1,6 +1,10 @@
 package registration;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import dbConnection.ConnectionDB;
 
 import com.gluonhq.charm.glisten.control.TextField;
 //import com.jfoenix.controls.JFXTextField;
@@ -33,6 +37,9 @@ public class RegistrationController {
     @FXML
     private JFXButton registerBtn;
     
+    ConnectionDB conObj = new ConnectionDB();
+    Connection con;
+    
     @FXML
     void gotoLogin(ActionEvent event) {
     	loginBtn.getScene().getWindow().hide();		
@@ -55,7 +62,16 @@ public class RegistrationController {
 
     @FXML
     void register(ActionEvent event) {
-
+    	try {
+			con = conObj.getConnection();
+			System.out.println(con);
+			System.out.println("Connected..." );
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	
     }
 
 }
