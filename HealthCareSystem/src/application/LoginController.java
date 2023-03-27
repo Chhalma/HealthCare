@@ -3,6 +3,8 @@ package application;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -22,7 +24,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import dbConnection.ConnectionDB;
-
+import AlertMessage.Message;
 
 public class LoginController implements Initializable{
 
@@ -59,15 +61,36 @@ public class LoginController implements Initializable{
     @FXML
     private TextField usernameField;
     
+    private PreparedStatement pst;
+    
     Connection con;
     ConnectionDB conDB = new ConnectionDB();
+    Message msg =  new Message();
     @FXML
     void createLogin(ActionEvent event) {
     			try {
 					con = conDB.getConnection();
-					System.out.println(con);
-					System.out.println("Connected To Database.");
-				} catch (ClassNotFoundException | SQLException e) {
+					String select = "SELECT * FROM user WHERE email=? and password = ?";
+					
+					pst = con.prepareStatement(select);
+					pst.setString(1, usernameField.getText());
+					pst.setString(2, passwordField.getText());
+    			
+					ResultSet rs = pst.executeQuery();
+					int count = 0;
+					
+					while(rs.next()) {
+						count++;
+					}
+					if(count==1) {
+						msg.setMessage("Liogin Successful!!");
+					}
+					else {
+						msg.setMessage("Liogin Failed!!");
+							
+					}
+    			
+    			} catch (ClassNotFoundException | SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}

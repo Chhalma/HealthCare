@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="anPane" fx:id="anPane" prefHeight="450.0" prefWidth="720.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+   <children>
+      <Pane layoutX="305.0" layoutY="30.0" prefHeight="376.0" prefWidth="350.0" stylesheets="@login.css">
+         <children>
+            <TextField fx:id="usernameField" layoutX="140.0" layoutY="116.0" prefHeight="36.0" prefWidth="240.0" promptText="Enter your name.." stylesheets="@login.css" />
+            <Label fx:id="username" layoutX="43.0" layoutY="125.0" prefHeight="21.0" prefWidth="83.0" text="Username" />
+            <PasswordField fx:id="passwordField" layoutX="140.0" layoutY="179.0" prefHeight="36.0" prefWidth="240.0" promptText="Enter your password.." stylesheets="@login.css" />
+            <Label fx:id="password" layoutX="43.0" layoutY="185.0" prefHeight="21.0" prefWidth="83.0" stylesheets="@login.css" text="Password" />
+            <Label fx:id="loginHeader" layoutX="52.0" layoutY="18.0" text="Login Page" textFill="GREEN" />
+            <JFXButton fx:id="loginBtn" layoutX="215.0" layoutY="308.0" onAction="#createLogin" prefHeight="66.0" prefWidth="165.0" stylesheets="@login.css" text="LOGIN" />
+            <JFXButton fx:id="registerBtn" layoutX="52.0" layoutY="308.0" onAction="#createRegister" opacity="0.83" prefHeight="66.0" prefWidth="165.0" stylesheets="@login.css" text="REGISTER" textFill="WHITE" />
+            <JFXButton fx:id="forgotPassBtn" layoutX="125.0" layoutY="235.0" prefHeight="66.0" prefWidth="196.0" text="FORGOT YOUR PASSWORD?" underline="true" />
+         </children>
+      </Pane>
+      <Pane fx:id="leftPane" layoutX="12.0" layoutY="30.0" prefHeight="378.0" prefWidth="302.0" stylesheets="@login.css">
+         <children>
+            <ImageView fitHeight="181.0" fitWidth="281.0" layoutX="8.0" layoutY="186.0" pickOnBounds="true">
+               <image>
+                  <Image url="@doctors.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="header" layoutX="11.0" layoutY="17.0" stylesheets="@login.css" text="Modern Health " textFill="CORAL">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="71.0" text="Care System" textFill="CORAL">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
